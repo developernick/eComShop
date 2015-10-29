@@ -10,6 +10,7 @@
  */
 angular
   .module('eComShopApp', [
+    'eComShopApp.moltin',
     'ngAnimate',
     'ngCookies',
     'ngResource',
@@ -32,22 +33,76 @@ angular
       .when('/store', {
         templateUrl: 'views/store.html',
         controller: 'StoreCtrl',
+        resolve: {
+          categories: function($q, MoltinAuth) {
+            var deferred = $q.defer();
+            $q.when(MoltinAuth).then(function(moltin) {
+              moltin.Category.List(null, function(categories){
+                deferred.resolve(categories);
+              });
+            })
+            return deferred.promise;
+          }
+        },
         controllerAs: 'store'
       })
-      .when('/category', {
+      .when('/category/:id', {
         templateUrl: 'views/category.html',
         controller: 'CategoryCtrl',
+        resolve: {
+          category: function($q, $route,  MoltinAuth) {
+            var deferred = $q.defer();
+            $q.when(MoltinAuth).then(function(moltin) {
+              moltin.Category.Get($route.current.params.id, function(category){
+                deferred.resolve(category);
+              });
+            })
+            return deferred.promise;
+          },
+          products: function($q, $route,  MoltinAuth) {
+            var deferred = $q.defer();
+            $q.when(MoltinAuth).then(function(moltin) {
+              moltin.Product.List({category: $route.current.params.id}, function(products){
+                deferred.resolve(products);
+              });
+            })
+            return deferred.promise;
+          }
+        },
         controllerAs: 'category'
       })
-      .when('/product', {
+      .when('/product/:id', {
         templateUrl: 'views/product.html',
         controller: 'ProductCtrl',
-        controllerAs: 'product'
+        resolve: {
+          product: function($q, $route, MoltinAuth) {
+            var deferred = $q.defer();
+            MoltinAuth.then(function(moltin) {
+              moltin.Product.Get($route.current.params.id, function(product) {
+                deferred.resolve(product);
+              });
+            });
+            return deferred.promise;
+          },
+          moltin: function(MoltinAuth) {
+            return MoltinAuth;
+          }
+        }
       })
-      .when('/cart', {
+       .when('/cart', {
         templateUrl: 'views/cart.html',
         controller: 'CartCtrl',
-        controllerAs: 'cart'
+        resolve: {
+          cart: function($q, MoltinAuth) {
+            var deferred = $q.defer();
+            MoltinAuth.then(function(moltin) {
+              moltin.Cart.Contents(function(cart) {
+                deferred.resolve(cart);
+              });
+            });
+            return deferred.promise;
+          },
+        }
       })
       .otherwise({
         redirectTo: '/'

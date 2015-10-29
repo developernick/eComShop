@@ -8,10 +8,17 @@
  * Controller of the eComShopApp
  */
 angular.module('eComShopApp')
-  .controller('CartCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('CartCtrl', function ($scope, cart) {
+    $scope.cart = cart;
+    // $scope.addStatus = null;
+
+    // $scope.delCart = function () {
+    //   // $scope.addStatus = "Removing";
+    //   moltin.Cart.Remove('<IDENTIFIER>', function() {
+    // // Everything is awesome...
+    //   }, function(error) {
+    // // Something went wrong...
+    //       });
+    // };
+    console.log(cart);
   });
