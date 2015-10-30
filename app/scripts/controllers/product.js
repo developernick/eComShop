@@ -27,19 +27,5 @@ angular.module('eComShopApp')
         }, 1000);
       });
     };
-    $scope.delCart = function() {
-      $scope.delStatus = 'Removing...';
-      // Insert(id, qty, modifiers/size, callback)
-      moltin.Cart.Remove('<IDENTIFIER>', function() {
-        $scope.delStatus = 'Success!';
-        moltin.Cart.Contents(function(items) {
-          $rootScope.cart = items;
-          $rootScope.$apply();
-        });
-        $scope.$apply();
-        $timeout(function() {
-          $scope.delStatus = null;
-        }, 1000);
-      });
-    };
+    
   });
