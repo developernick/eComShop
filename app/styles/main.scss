@@ -25,7 +25,7 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -81,11 +81,102 @@ body {
     padding-right: 0;
   }
   /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+  // .header {
+  //   margin-bottom: 30px;
+  // }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+}
+//                      -_-_-_-_-_-_-_- Global Page Settings -_-_-_-_-_-_-_-
+html, body{
+	max-width: auto;
+	max-height: auto;
+	background: url("/images/WorkBench.jpg") no-repeat center center fixed;
+	background-size:cover;
+	padding: 0;
+	margin: 0 auto;
+}
+.pageWrapper{
+	padding:inherit;
+	margin:inherit;
+}
+.content{
+	// height: 100%;
+	padding:0;
+	margin:0 auto;
+}
+
+.menubar{
+	font-family: 'Nixie One', cursive;
+	color: white;
+	height: 100%;
+	padding:0;
+	margin:0 auto;
+}
+.sidebar-nav {
+	text-align: center;
+	height:100%;
+}
+.navlink {
+	margin-top: 5rem;
+	font-size: 1.6rem;
+}
+.navbar-inverse{
+	border: none;
+	height:100%;
+	background-image: none !important;
+	background-color: #1C1106 !important;
+	background-blend-mode: saturation;
+	opacity: 0.8;
+}
+.mainLogo{
+	height: auto;
+	margin: 0 auto;
+	padding: 3rem 0;
+}
+.Brand{
+	align-content: center;
+	margin: 0 auto;
+	opacity: 0.2;
+}
+                  // -_-_-_-_- Footer -_-_-_-_-
+.footerLeft{
+  float: left;
+}
+.footerRight{
+  float: right;
+}
+.mediaIcons{
+  margin: 0 0.5rem 0 0.5rem;
+}
+// _-_-_-_-_-_-_- LandingPage Settings
+.landingLogo{
+  height: 30rem;
+  width: 30rem;
+}
+
+
+/* -_-_-_-_-_-_-_-_-_- Media Queries -_-_-_-_-_-_-_-_-_- */
+
+/* make sidebar nav vertical */
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+		color: #BF9475;
   }
 }
