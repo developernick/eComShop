@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- endbuild -->
+
   </head>
   <body ng-app="eComShopApp">
     <!--[if lte IE 8]>
@@ -42,33 +43,30 @@
                     <li class="navbar-brand mainLogo"> <img class="Brand"   src="/images/CDM_Blanco.png"/></li>
                     <li class="navlink"><a href="#">HOME</a></li>
                     <li class="navlink"><a href="#/store">SHOP</a></li>
-                    <li class="navlink"><a href="#">ABOUT</a></li>
-                    <li class="navlink"><a href="#">CONTACT</a></li>
+                    <li class="navlink"><a href="#/about">ABOUT</a></li>
+                    <li class="navlink"><a href="#/contact">CONTACT</a></li>
                   </ul>
                 </div><!--/.nav-collapse -->
               </div>
             </div>
           </div>
 
-          <div class="container-liquid">
+          <div class="container-liquid">  
             <div class="col-sm-10">
               <div ng-view=""></div>
             </div>
           </div>
         </div>
-    <div class="footer row">
-      <div class="container">
-        <div class="footerLeft">
-
+    <div class="footer">
+      <div class="container-liquid">
+        <div class="footerLeft col-sm-6">
+          <p><i class="fa fa-copyright"></i> 2015 C.D.MacBain Woodworking</p>
         </div>
-        <div class="footerRight">
+        <div class="footerRight pull-right col-sm-6">
           <a class="mediaIcons" href="#"><i class="fa fa-facebook-official fa-2x"></i></a>
           <a class="mediaIcons" href="#"><i class="fa fa-instagram fa-2x"></i></a>
-          <a class="mediaIcons" href="#"><i class="fa fa-amazon fa-2x"></i>
-</a>
-
+          <a class="mediaIcons" href="#"><i class="fa fa-amazon fa-2x"></i></a>
         </div>
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
       </div>
     </div>
 

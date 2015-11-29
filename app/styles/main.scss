@@ -10,10 +10,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
-body {
-  padding: 0;
-}
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -93,10 +89,11 @@ body {
 html, body{
 	max-width: auto;
 	max-height: auto;
-	background: url("/images/WorkBench.jpg") no-repeat center center fixed;
+	background: url("/images/WoodWithLogo.jpg") no-repeat center center fixed;
 	background-size:cover;
 	padding: 0;
 	margin: 0 auto;
+  color: #CDC8D8;
 }
 .pageWrapper{
 	padding:inherit;
@@ -107,7 +104,7 @@ html, body{
 	padding:0;
 	margin:0 auto;
 }
-
+                      // -_-_-_-_-_-_-_- Navigation -_-_-_-_-_-_-_-
 .menubar{
 	font-family: 'Nixie One', cursive;
 	color: white;
@@ -115,13 +112,16 @@ html, body{
 	padding:0;
 	margin:0 auto;
 }
+ul.nav.navbar-nav{
+  height: 100%;
+}
 .sidebar-nav {
 	text-align: center;
 	height:100%;
 }
 .navlink {
-	margin-top: 5rem;
-	font-size: 1.6rem;
+	margin-bottom: 5rem;
+	font-size: 2.6rem;
 }
 .navbar-inverse{
 	border: none;
@@ -139,17 +139,21 @@ html, body{
 .Brand{
 	align-content: center;
 	margin: 0 auto;
-	opacity: 0.2;
+  height: 16rem;
+	opacity: 0.7 ;
 }
                   // -_-_-_-_- Footer -_-_-_-_-
 .footerLeft{
   float: left;
+  color: #CDC8D8
 }
 .footerRight{
-  float: right;
+  // float: right;
 }
 .mediaIcons{
   margin: 0 0.5rem 0 0.5rem;
+  float: right;
+  color: #CDC8D8;
 }
 // _-_-_-_-_-_-_- LandingPage Settings
 .landingLogo{
