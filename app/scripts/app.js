@@ -30,15 +30,16 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      // -----------------------Store-----------------------
       .when('/store', {
         templateUrl: 'views/store.html',
         controller: 'StoreCtrl',
         resolve: {
-          categories: function($q, MoltinAuth) {
+          products: function($q, $route,  MoltinAuth) {
             var deferred = $q.defer();
             $q.when(MoltinAuth).then(function(moltin) {
-              moltin.Category.List(null, function(categories){
-                deferred.resolve(categories);
+               moltin.Product.List({category: $route.current.params.id}, function(products){
+                deferred.resolve(products);
               });
             })
             return deferred.promise;

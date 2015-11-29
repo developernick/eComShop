@@ -8,7 +8,7 @@
  * Controller of the eComShopApp
  */
 angular.module('eComShopApp')
-  .controller('StoreCtrl', function ($scope, categories) {
-    $scope.categories = categories;
-    console.log(categories);
-  });
+  .controller('StoreCtrl', ['$scope', function ($scope, category, products) {
+    $scope.category = category;
+    $scope.products = products;
+  }]);
