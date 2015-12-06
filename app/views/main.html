@@ -16,5 +16,24 @@
 
             </div>
           </div>
+          <div class="row">
+          <div class="instagram col-sm-4"></div>
+
+          <script>
+          jQuery(function($) {
+            $('.instagram').on('willLoadInstagram', function(event, options) {
+              console.log(options);
+            });
+            $('.instagram').on('didLoadInstagram', function(event, response) {
+              console.log(response);
+            });
+            $('.instagram').instagram({
+              userId: 'love',
+              clientId: '94293fcf87954708a3ed4c601e334f10'
+            });
+          });
+          </script>
+
+          </div>
         </div>
 </div>

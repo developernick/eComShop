@@ -89,7 +89,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 html, body{
 	max-width: auto;
 	max-height: auto;
-	background: url("/images/WoodWithLogo.jpg") no-repeat center center fixed;
+  background: url("/images/coasters.jpg") no-repeat center center fixed;
 	background-size:cover;
 	padding: 0;
 	margin: 0 auto;
@@ -99,7 +99,12 @@ html, body{
 	padding:inherit;
 	margin:inherit;
 }
+.pageBody{
+
+  height: 100%;
+}
 .content{
+
 	// height: 100%;
 	padding:0;
 	margin:0 auto;
